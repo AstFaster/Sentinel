@@ -1,0 +1,18 @@
+archivesBaseName = "sentinel-api"
+
+repositories {
+    maven {
+        name = "sonatype-oss-snapshots1"
+        url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    api 'org.apache.logging.log4j:log4j-core:2.20.0'
+    api 'org.jetbrains:annotations:24.0.1'
+
+    api "net.kyori:adventure-api:4.14.0"
+    api 'net.kyori:adventure-nbt:4.14.0'
+    api 'net.kyori:adventure-text-serializer-gson:4.14.0'
+    api "net.kyori:adventure-text-serializer-plain:4.14.0"
+}

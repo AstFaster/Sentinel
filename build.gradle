@@ -1,0 +1,24 @@
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java-library'
+
+    group = 'fr.astfaster'
+    version = '1.0.0'
+    archivesBaseName = 'Sentinel'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(18)
+        }
+    }
+
+    compileJava {
+        sourceCompatibility = JavaVersion.VERSION_18
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+}

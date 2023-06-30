@@ -1,0 +1,29 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+archivesBaseName = "sentinel-proxy"
+
+repositories {
+    mavenCentral()
+}
+
+shadowJar {
+    configurations = [project.configurations.runtimeClasspath]
+    archiveVersion.set('')
+    archiveBaseName.set('sentinel')
+    manifest {
+        attributes 'Main-Class': 'fr.astfaster.sentinel.Bootstrap'
+    }
+}
+
+dependencies {
+    implementation project(":api")
+    implementation 'io.netty:netty-all:4.1.93.Final'
+    implementation 'net.sf.jopt-simple:jopt-simple:5.0.4'
+    implementation 'com.lmax:disruptor:3.4.4'
+
+    implementation 'com.google.guava:guava:32.0.1-jre'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.yaml:snakeyaml:2.0'
+}
